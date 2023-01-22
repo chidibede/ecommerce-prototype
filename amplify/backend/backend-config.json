@@ -1,0 +1,44 @@
+{
+  "api": {
+    "ecommerceapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "productHandler"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "productHandler": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_productHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_productHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productHandler"
+        }
+      ]
+    }
+  }
+}
